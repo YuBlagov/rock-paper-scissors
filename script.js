@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const computerDiv = document.getElementById("computer-choice");
     const resultDiv = document.getElementById("result");
 
-    const choices = ["🤜", "📄", "✂️"];
+    const choices = ["rock", "paper", "scissors"];
 
     function getComputerChoice() {
         const randomIndex = Math.floor(Math.random() * choices.length);
@@ -79,13 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getResult(playerChoice, computerChoice) {
         if (playerChoice === computerChoice) {
-            return "It's a tie!🤝";
+            return "It's a tie! 🤝";
         } else if (
-            (playerChoice === "🤜" && computerChoice === "✂️") ||
-            (playerChoice === "📄" && computerChoice === "🤜") ||
-            (playerChoice === "✂️" && computerChoice === "📄")
+            (playerChoice === "rock" && computerChoice === "scissors") ||
+            (playerChoice === "paper" && computerChoice === "rock") ||
+            (playerChoice === "scissors" && computerChoice === "paper")
         ) {
-            return "You win!🎉";
+            return "You win! 🎉";
         } else {
             return "Computer wins 😈";
         }
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buttons.forEach(button => {
         button.addEventListener("click", function () {
-            const playerChoice = button.textContent;
+            const playerChoice = button.textContent === "🤜" ? "rock" : button.textContent === "📄" ? "paper" : "scissors";
             const computerChoice = getComputerChoice();
             const result = getResult(playerChoice, computerChoice);
 
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             resultDiv.textContent = result;
 
             resultDiv.classList.remove("win", "lose", "draw", "shake");
-            if (result === "You win!🎉") {
+            if (result === "You win! 🎉") {
                 resultDiv.classList.add("win");
             } else if (result === "Computer wins 😈") {
                 resultDiv.classList.add("lose");
