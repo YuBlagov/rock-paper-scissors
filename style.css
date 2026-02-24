@@ -156,3 +156,12 @@ h2{
   font-weight: 700;
   margin-left: 0.5rem;
 }
+.leader {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
+
+.loser {
+  color: #f00;
+  text-shadow: 0 0 5px #f00, 0 0 10px #f00;
+}
