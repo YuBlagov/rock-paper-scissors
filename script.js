@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
+    const loading = document.getElementById("loading");
+
+    if (loading) loading.remove();
 
     if (app.children.length === 0) {
 
@@ -41,6 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
         resultDiv.id = "result";
         resultDiv.textContent = "RESULT";
         app.appendChild(resultDiv);
+
+        const scoreboard = document.createElement("div");
+        scoreboard.id = "scoreboard";
+        app.appendChild(scoreboard);
+
+        const playerScoreDiv = document.createElement("div");
+        playerScoreDiv.classList.add("score");
+        playerScoreDiv.innerHTML = `player: <span id="player-score">0</span>`;
+        scoreboard.appendChild(playerScoreDiv);
+
+        const computerScoreDiv = document.createElement("div");
+        computerScoreDiv.classList.add("score");
+        computerScoreDiv.innerHTML = `computer: <span id="computer-score">0</span>`;
+        scoreboard.appendChild(computerScoreDiv);
     }
 
 
@@ -101,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
             playerDiv.textContent = "PLAYER: " + playerChoice;
             computerDiv.textContent = "COMPUTER: " + computerChoice;
             resultDiv.textContent = result;
+            updateScoreboard(result);
 
             resultDiv.classList.remove("win", "lose", "draw", "shake");
             if (result === "You win! 🎉") {
@@ -115,4 +133,20 @@ document.addEventListener("DOMContentLoaded", function () {
             resultDiv.classList.add("shake");
         });
     });
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function updateScoreboard(result) {
+        const playerScoreSpan = document.getElementById("player-score");
+        const computerScoreSpan = document.getElementById("computer-score");
+        if (result === "You win! 🎉") {
+            playerScore++;
+            playerScoreSpan.textContent = playerScore;
+        } else if (result === "Computer wins 😈") {
+            computerScore++;
+            computerScoreSpan.textContent = computerScore;
+        }
+    }
+
 });

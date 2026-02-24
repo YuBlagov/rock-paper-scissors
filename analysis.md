@@ -41,6 +41,7 @@ This project demonstrates the difference between Client-Side Rendering (CSR) and
 ### Blank Screen vs Immediate Content
 - **SSR:** The user sees content immediately (no blank screen).
 - **CSR:** The user may see a blank screen while JavaScript loads.
+    A loading message is displayed to avoid showing an empty interface.
 
 ### Dependency on JavaScript
 - **SSR:** The page structure works even if JavaScript is slow. Only interactivity depends on JavaScript.

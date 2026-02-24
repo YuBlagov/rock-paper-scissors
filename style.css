@@ -19,7 +19,7 @@ body{
     padding: 2rem 2rem 3rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff inset;
-    gap: 2.5rem;
+    gap: 2.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,12 +36,13 @@ h1, h2 {
 
 h2{
     font-size: 1.5rem;
+    text-shadow: 0 0 3px #0ff;
 }
 
 #result, #player-choice, #computer-choice {
     text-transform: uppercase;
     font-weight: 700;
-    text-shadow: 0 0 3px #0ff, 0 0 7px #0ff, 0 0 10px #0ff;
+    text-shadow: 0 0 3px #0ff;
     color: #0ff;
 }
 
@@ -119,3 +120,39 @@ h2{
     text-shadow: 0 0 5px #ff0, 0 0 10px #ff0 !important;
 }
 
+#loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 255, 255, 0.2); /* light cyan border */
+    border-top: 5px solid #0ff; /* bright cyan top */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto; /* center in wrapper */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); } 
+}
+#scoreboard {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+
+.score {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #0ff;
+  text-shadow: 0 0 3px #0ff;
+}
+
+.score span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
