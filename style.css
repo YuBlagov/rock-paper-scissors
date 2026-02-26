@@ -165,3 +165,15 @@ h2{
   color: #f00;
   text-shadow: 0 0 5px #f00, 0 0 10px #f00;
 }
+#ssr, #csr {
+    padding: 0.5rem 1.2rem;
+    background: #111;
+    color: #0ff;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    font-size: 3rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    text-shadow: 0 0 3px #0ff, 0 0 5px #0ff, 0 0 8px #0ff;
+    font-size: 1.5rem;
+}
