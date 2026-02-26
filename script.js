@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
 
     const loading = document.getElementById("loading");
-
+    
     setTimeout(() => {
         if (loading) loading.remove();
 
