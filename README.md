@@ -38,7 +38,7 @@ You can try the project here:
 ---
 
 ## Project Structure
-
+```
 ├── index.html # Main page linking to SSR and CSR versions
 ├── ssr.html # Server-Side Rendered version
 ├── csr.html # Client-Side Rendered version
@@ -46,7 +46,7 @@ You can try the project here:
 ├── script.js # Game logic
 ├── analysis.md # Written analysis of CSR vs SSR
 └── README.md
-
+```
 
 ---
 
